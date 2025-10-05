@@ -1,1 +1,2 @@
 # Journal de bord du projet encadré
+## Au début tout allait bien, j'ai suivis toutes les instructions en cours et tout fonctionnait correctement. J'ai rencontré mon premier problème quand il a fallu recupérer le repositary, après la commande git clone <URL>, on ma demandé ma passphrase.. Et j'étais en mode, mais quelle passphrase ? Ca sort d'où ça ?? Enfin bref, pour la faire courte j'ai dû re créer une clé ssh pour configurer une passphrase. A part cet accro, le reste était OK.
