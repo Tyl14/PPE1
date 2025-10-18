@@ -1,5 +1,7 @@
-# Comptes par types d'entités (Person)
+#!/bin/bash
 
-cd /Users/tyllanecazenave/Exercice1/ann
-echo "Person en 2016 "
-cat 2016/* | grep Person | wc -l
+DATADIR=$1
+ANNEE=$2
+TYPE=$3
+
+cat $DATADIR/$ANNEE/*.ann | grep "$TYPE" | wc -l

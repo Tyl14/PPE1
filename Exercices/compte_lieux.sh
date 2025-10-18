@@ -1,6 +1,8 @@
-# Classement des lieux les plus cités
+DATADIR=$1
+ANNEE=$2
+MOIS=$3
+TOPN=$4
 
-cd /Users/tyllanecazenave/Exercice1/ann/
+cd $DATADIR
 
-echo "Lieux les plus cités en 2016:"
-
+cat ./$ANNEE/$ANNEE_$MOIS_*.ann | grep Location | cut -f3 | sort | uniq -c | sort -n | tail -n $TOPN
