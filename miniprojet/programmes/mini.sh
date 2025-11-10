@@ -1,38 +1,45 @@
 #!/usr/bin/bash
-
-if [ $# -ne 1 ]
-then
-	echo "Ce programme demande un argument"
-	exit
+if [ $# -ne 2 ]; then
+    echo "Ce programme demande deux arguments : 1 fichier d'entrée contenant des urls et 1 fichier sortie"
+    exit
 fi
 
-Fichier_urls=$1
+FICHIER_URLS=$1
+SORTIE=$2
 
-while read -r line
-do echo "${line}"
-
-# Si l'url est ok
-if [[ $line =~ ^https?:// ]]
-then
-	echo "$line ressemble à une url"
-
-# Vérifier l'encodage UTF-8
-if curl -s "$line" | iconv -f UTF-8 -t UTF-8 >/dev/null 2>&1
-then
-	echo "$line URLS valide"
-	echo -e "$ligne_id\t$line\t$(curl -s -o /dev/null -w "%{http_code}\t%{content_type}" "$line")\t$(curl -s "$line" | wc -w)" >> tableau-fr.tsv
-	ligne_id=$((ligne_id+1))
-	# Extraction du texte des pages
-	lynx -dump -nolist "$line" >> contenu.txt
-
-else
-	echo "$line URLs invalide"
-	echo "$line" >> urls_invalide.txt
-fi
-else
-	echo "Ne ressemble pas à un url"
-	echo "$line" >> urls_invalide.txt
+if [ ! -f "$FICHIER_URLS" ]; then
+    echo "Ce programme demande un fichier"
+    exit
 fi
 
-done < "$Fichier_urls";
-echo "Tout est fait les bichties"
+NB_LIGNE=0 # on aurait pu mettre lineno
+
+echo -e "Numero\tAdresse\tReponseRequête\tEncodage\tNombreDeMots" > "$SORTIE"
+
+while read -r LINE ; do
+    if [[ $LINE =~ ^https?:// ]]; then
+
+        NB_LIGNE=$(expr $NB_LIGNE + 1)
+
+        CODE_ET_ENCODAGE=$(curl -s -L -i -o "tmp.txt" -w "%{http_code}\n%{content_type}" "$LINE")
+
+        CODE=$(echo "$CODE_ET_ENCODAGE" | head -n 1)
+
+        if [ $CODE -eq 0 ]; then
+            echo -e "$NB_LIGNE\t$LINE\tERREUR\tERREUR\tERREUR" >> "$SORTIE"
+            continue
+        fi
+
+        ENCODAGE=$(echo "$CODE_ET_ENCODAGE" | grep -E -o "charset=.*")
+
+        if [[ "$ENCODAGE" =~ ('UTF-8'|'utf-8') ]]; then
+            ENCODAGE_OU_PAS="UTF-8"
+        else
+            ENCODAGE_OU_PAS="NON"
+        fi
+
+        NB_MOTS=$(cat "tmp.txt" | lynx -dump -stdin -nolist | wc -w)
+
+        echo -e "$NB_LIGNE\t$LINE\t$CODE\t$ENCODAGE_OU_PAS\t$NB_MOTS" >> "$SORTIE"
+fi
+done  < "$FICHIER_URLS"
