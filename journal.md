@@ -17,4 +17,4 @@ then
 echo " Ce programme demande un argument "
 exit
 fi
-4- Pour afficher le numéro de ligne on peut utiliser la commande nl
+4- Pour afficher le numéro de ligne on peut utiliser la commande lineno
