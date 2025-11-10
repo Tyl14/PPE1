@@ -14,7 +14,25 @@ fi
 
 NB_LIGNE=0 # on aurait pu mettre lineno
 
-echo -e "Numero\tAdresse\tReponseRequête\tEncodage\tNombreDeMots" > "$SORTIE"
+cat > "$SORTIE" <<EOF
+<!DOCTYPE html>
+<style>
+table, th, td {
+  border:1px solid black;
+}
+</style>
+<body>
+<h2>Analyse des URLS </h2>
+<table style="width:100%">
+<table>
+    <tr>
+        <th>Numero</th>
+        <th>Adresse</th>
+        <th>ReponseRequete</th>
+        <th>Encodage</th>
+        <th>NombreDeMots</th>
+    </tr>
+EOF
 
 while read -r LINE ; do
     if [[ $LINE =~ ^https?:// ]]; then
@@ -26,7 +44,7 @@ while read -r LINE ; do
         CODE=$(echo "$CODE_ET_ENCODAGE" | head -n 1)
 
         if [ $CODE -eq 0 ]; then
-            echo -e "$NB_LIGNE\t$LINE\tERREUR\tERREUR\tERREUR" >> "$SORTIE"
+            echo "<tr><td>$NB_LIGNE</td><td>$LINE</td><td>ERREUR</td><td>ERREUR</td><td>ERREUR</td></tr>" >> "$SORTIE"
             continue
         fi
 
@@ -40,6 +58,11 @@ while read -r LINE ; do
 
         NB_MOTS=$(cat "tmp.txt" | lynx -dump -stdin -nolist | wc -w)
 
-        echo -e "$NB_LIGNE\t$LINE\t$CODE\t$ENCODAGE_OU_PAS\t$NB_MOTS" >> "$SORTIE"
+        echo "<tr><td>$NB_LIGNE</td><td>$LINE</td><td>$CODE</td><td>$ENCODAGE_OU_PAS</td><td>$NB_MOTS</td></tr>" >> "$SORTIE"
+
 fi
 done  < "$FICHIER_URLS"
+cat >> "$SORTIE" <<EOF
+</body>
+</table>
+EOF
