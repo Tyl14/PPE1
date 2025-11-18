@@ -16,13 +16,21 @@ Script_Bash_Exo_4 - Si la variable # n'est pas égale a 1, afficher "ce programm
 Mini-projet 1 - Exo1
  
 1- Cat permet d'afficher le contenu d'un fichier, mais dans notre cas c'est inutile vu que la boucle while lit le fichier ligne par ligne.
+
 2- Il faut définir "urls/fr.txt" comme une variable avec un $, on peut par exemple la nommer : URLS=$1 on pourra alors s'y réfferer dans le script comme $URLS et il faudra alors donner le fichier contenant les urls en argument de la commande.
+
 3- Il faut ajouter une boucle if, par exemple : 
+
 if [ $ # - ne 1 ]
+
 then
+
 echo " Ce programme demande un argument "
+
 exit
+
 fi
+
 4- Pour afficher le numéro de ligne on peut utiliser la commande lineno
 
 # Semaine 7 #
