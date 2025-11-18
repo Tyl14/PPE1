@@ -13,7 +13,8 @@ On a fait la correction des scripts mais certains point étaient encore flou. Ce
 Script_Bash_Exo_4 - Si la variable # n'est pas égale a 1, afficher "ce programme demande un argument" et quitter le script, si la condition est rempli, en prenant en compte FICHIER_URLS en argument 1 et établissant que OK et NOK = 0, tant que la ligne du fichier est lisible, afficher la ligne, si le début de la ligne $LINE correspond a https?//, alors afficher "ressemble à une URL valide" (calcul le nombre d'URL valide), sinon, afficher "ne ressemble pas à une URL valide" (calcul le nombre d'URL non valide), si la condition est rempli, terminer la boucle et afficher "nombre URLs et nombre lignes douteuses" 
 
 # Semaine 6 #
-Mini-projet 1 - Exo1 
+Mini-projet 1 - Exo1
+ 
 1- Cat permet d'afficher le contenu d'un fichier, mais dans notre cas c'est inutile vu que la boucle while lit le fichier ligne par ligne.
 2- Il faut définir "urls/fr.txt" comme une variable avec un $, on peut par exemple la nommer : URLS=$1 on pourra alors s'y réfferer dans le script comme $URLS et il faudra alors donner le fichier contenant les urls en argument de la commande.
 3- Il faut ajouter une boucle if, par exemple : 
@@ -25,9 +26,8 @@ fi
 4- Pour afficher le numéro de ligne on peut utiliser la commande lineno
 
 # Semaine 7 #
-Mini-projet 2
-Pour le coup c'était plus évident que la première partie. Logique parce que là il suffisait juste de passer ce qu'on avait déjà fait en HTML. Mais c'était plus clair aussi parce qu'on avait déjà travailler sur HTML dans un autre cours. Du coup j'étais famillière avec le concept des balises et la construction d'un fichier HTML. J'ai eu plus de mal a construire le premier script, c'était pas forcément évident de bien formuler les commandes. J'ai eu du mal par moment a bien construire ma ligne de commande avec les options et les pipelines. Rien que trouver les bonnes commandes/option des fois c'était pas facile.
+Mini-projet 2 - Pour le coup c'était plus évident que la première partie. Logique parce que là il suffisait juste de passer ce qu'on avait déjà fait en HTML. Mais c'était plus clair aussi parce qu'on avait déjà travailler sur HTML dans un autre cours. Du coup j'étais famillière avec le concept des balises et la construction d'un fichier HTML. J'ai eu plus de mal a construire le premier script, c'était pas forcément évident de bien formuler les commandes. J'ai eu du mal par moment a bien construire ma ligne de commande avec les options et les pipelines. Rien que trouver les bonnes commandes/option des fois c'était pas facile.
 
 # Semaine 8 #
-Mini-projet 3 # Je crois bien que j'ai pas vraiment fait ce qu'il fallait. J'étais absente au cours cette semaine là et je n'ai pas bien saisi ce qui était demandé. Après coup j'ai discuté avec des camarades et en fait il fallait (je crois) faire une feuille style.css, personnalisé par nos soins, et la push dans notre dépôt git et l'utilser dans l'index.htmml. Chose que je n'ai pas faite. Je suis encore un peu confuse, (ça m'apprendra a être absente). Je me suis un peu trop appuyer sur l'exemplier au final. J'ai pas plsu personnalisé que ça, j'ai utilisé le stylesheet par défaut de bulma (je crois) et globalement j'ai juste joué avec les couleurs et la position et le style du texte. Et dans ma page web, comme dans les exemples, j'ai fait une présentation générale du projet final mais en fait il fallait parler du mini-projet plus précisément.
+Mini-projet 3 - Je crois bien que j'ai pas vraiment fait ce qu'il fallait. J'étais absente au cours cette semaine là et je n'ai pas bien saisi ce qui était demandé. Après coup j'ai discuté avec des camarades et en fait il fallait (je crois) faire une feuille style.css, personnalisé par nos soins, et la push dans notre dépôt git et l'utilser dans l'index.htmml. Chose que je n'ai pas faite. Je suis encore un peu confuse, (ça m'apprendra a être absente). Je me suis un peu trop appuyer sur l'exemplier au final. J'ai pas plsu personnalisé que ça, j'ai utilisé le stylesheet par défaut de bulma (je crois) et globalement j'ai juste joué avec les couleurs et la position et le style du texte. Et dans ma page web, comme dans les exemples, j'ai fait une présentation générale du projet final mais en fait il fallait parler du mini-projet plus précisément.
 
