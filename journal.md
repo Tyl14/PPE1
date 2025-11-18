@@ -22,13 +22,9 @@ Mini-projet 1 - Exo1
 3- Il faut ajouter une boucle if, par exemple : 
 
 if [ $ # - ne 1 ]
-
 then
-
 echo " Ce programme demande un argument "
-
 exit
-
 fi
 
 4- Pour afficher le numéro de ligne on peut utiliser la commande lineno
