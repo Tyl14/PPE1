@@ -20,7 +20,6 @@ Mini-projet 1 - Exo1
 2- Il faut définir "urls/fr.txt" comme une variable avec un $, on peut par exemple la nommer : URLS=$1 on pourra alors s'y réfferer dans le script comme $URLS et il faudra alors donner le fichier contenant les urls en argument de la commande.
 
 3- Il faut ajouter une boucle if, par exemple : 
-
 if [ $ # - ne 1 ]
 then
 echo " Ce programme demande un argument "
