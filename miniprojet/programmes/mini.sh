@@ -16,14 +16,13 @@ NB_LIGNE=0 # on aurait pu mettre lineno
 
 cat > "$SORTIE" <<EOF
 <!DOCTYPE html>
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"/>
+</head>
 <body>
-<h2>Analyse des URLS </h2>
-<table style="width:100%">
+<h1>Analyse des URLS </h1>
 <table>
     <tr>
         <th>Numero</th>
