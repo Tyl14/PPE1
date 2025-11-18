@@ -21,9 +21,10 @@ cat > "$SORTIE" <<EOF
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@1.0.4/css/bulma.min.css"/>
 </head>
-<body>
-<h1>Analyse des URLS </h1>
-<table>
+
+<h1 class="title is-centered">Analyse des URLS </h1>
+<table class="table is-bordered is-hoverable is-striped">
+ <tbody>
     <tr>
         <th>Numero</th>
         <th>Adresse</th>
@@ -62,6 +63,6 @@ while read -r LINE ; do
 fi
 done  < "$FICHIER_URLS"
 cat >> "$SORTIE" <<EOF
-</body>
+</tbody>
 </table>
 EOF
