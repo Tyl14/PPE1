@@ -1,4 +1,5 @@
 # Journal de bord PPE
+Un journal intime pas trop intime.
 
 # Semaine 2 #
 Au début tout allait bien, j'ai suivis toutes les instructions en cours et tout fonctionnait correctement. J'ai rencontré mon premier problème quand il a fallu recupérer le repositary, après la commande git clone <URL>, on ma demandé ma passphrase.. Et j'étais en mode, mais quelle passphrase ? Ca sort d'où ça ?? Enfin bref, pour la faire courte j'ai dû re créer une clé ssh pour configurer une passphrase. A part cet accro, le reste était OK.
@@ -34,4 +35,5 @@ Mini-projet 2 - Pour le coup c'était plus évident que la première partie. Log
 # Semaine 8 #
 Mini-projet 3 - Je crois bien que j'ai pas vraiment fait ce qu'il fallait. J'étais absente au cours cette semaine là et je n'ai pas bien saisi ce qui était demandé. Après coup j'ai discuté avec des camarades et en fait il fallait (je crois) faire une feuille style.css, personnalisé par nos soins, et la push dans notre dépôt git et l'utilser dans l'index.htmml. Chose que je n'ai pas faite. Je suis encore un peu confuse, (ça m'apprendra a être absente). Je me suis un peu trop appuyer sur l'exemplier au final. J'ai pas plsu personnalisé que ça, j'ai utilisé le stylesheet par défaut de bulma (je crois) et globalement j'ai juste joué avec les couleurs et la position et le style du texte. Et dans ma page web, comme dans les exemples, j'ai fait une présentation générale du projet final mais en fait il fallait parler du mini-projet plus précisément. Et par rapport aux expressions régulières, j'ai consulter les diapos et le concept général me parait assez clair mais il y a certains points comme les groupes et les captures que je ne comprend pas bien.J'ai du mal aussi avec les références, je ne vois pas comment on les fait et comment on les utilise.
 
-#test
+# Dernières semaines#
+#Travail sur le projet final#
